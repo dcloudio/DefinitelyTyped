@@ -6073,8 +6073,9 @@ interface GetUserInfoOptions {
      * - qq: QQ登录
      * - sinaweibo: 新浪微博登录
      * - xiaomi: 小米登录
+     * - apple: Apple登录
      */
-    provider?: 'weixin' | 'qq' | 'sinaweibo' | 'xiaomi';
+    provider?: 'weixin' | 'qq' | 'sinaweibo' | 'xiaomi' | 'apple';
     /**
      * 是否带上登录态信息，仅微信小程序生效。
      */
