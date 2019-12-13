@@ -21,7 +21,7 @@ declare class Uni {
      *
      * 参考: [http://uniapp.dcloud.io/api/window/communication?id=on](http://uniapp.dcloud.io/api/window/communication?id=on)
      */
-    $on(eventName?: string, callback?: () => void): void;
+    $on(eventName?: string, callback?: (result: any) => void): void;
     /**
      * 触发自定义事件，附加的参数会传递给事件监听器。
      *
@@ -33,13 +33,13 @@ declare class Uni {
      *
      * 参考: [http://uniapp.dcloud.io/api/window/communication?id=once](http://uniapp.dcloud.io/api/window/communication?id=once)
      */
-    $once(eventName?: string, callback?: () => void): void;
+    $once(eventName?: string, callback?: (result: any) => void): void;
     /**
      * 移除自定义事件监听器。如果没有指定事件名，则移除所有事件监听器。如果提供事件名，则移除该事件的所有监听器。如果提供了事件名和回调，则只移除这个回调的监听器。
      *
      * 参考: [http://uniapp.dcloud.io/api/window/communication?id=off](http://uniapp.dcloud.io/api/window/communication?id=off)
      */
-    $off(eventName?: string | any [], callback?: () => void): void;
+    $off(eventName?: string | any [], callback?: (result: any) => void): void;
     /**
      * 通过id 获取 subNVues 原生子窗体的实例
      *
@@ -703,7 +703,7 @@ declare class Uni {
      *
      * 参考: [http://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](http://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap)
      */
-    onTabBarMidButtonTap(callback?: () => void): void;
+    onTabBarMidButtonTap(callback?: (result: any) => void): void;
     /**
      * 保留当前页面，跳转到应用内的某个页面
      *
@@ -805,7 +805,7 @@ declare class Uni {
      *
      * 参考: [http://uniapp.dcloud.io/api/ui/window?id=offwindowresize](http://uniapp.dcloud.io/api/ui/window?id=offwindowresize)
      */
-    offWindowResize(callback?: () => void): void;
+    offWindowResize(callback?: (result: any) => void): void;
     /**
      * 获取服务供应商
      *
@@ -985,7 +985,7 @@ interface SubNVue {
     /**
      * 监听消息
      */
-    onMessage(success?: () => void): void;
+    onMessage(success?: (result: any) => void): void;
 }
 
 interface SubNVuesSetStyleOptions {
@@ -1082,15 +1082,15 @@ interface RequestPaymentOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface RequestOptions {
@@ -1254,11 +1254,11 @@ interface DownloadFileOption {
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface DownloadTask {
@@ -1330,15 +1330,15 @@ interface ConnectSocketOption {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SendSocketMessageOptions {
@@ -1399,7 +1399,7 @@ interface SocketTask {
     /**
      * 监听 WebSocket 连接关闭事件
      */
-    onClose(callback?: () => void): void;
+    onClose(callback?: (result: any) => void): void;
     /**
      * 监听 WebSocket 错误
      */
@@ -1444,11 +1444,11 @@ interface ChooseImageOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseImageSuccessCallbackResult {
@@ -1504,15 +1504,15 @@ interface PreviewImageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LongPressActionsOptions {
@@ -1531,11 +1531,11 @@ interface LongPressActionsOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LongPressActionsSuccessData {
@@ -1561,11 +1561,11 @@ interface GetImageInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetImageInfoSuccessData {
@@ -1599,15 +1599,15 @@ interface SaveImageToPhotosAlbumOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CompressImageOptions {
@@ -1622,7 +1622,7 @@ interface CompressImageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
@@ -1630,7 +1630,7 @@ interface CompressImageOptions {
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CompressImageSuccessData {
@@ -1644,15 +1644,15 @@ interface StartRecordOptions {
     /**
      * 录音成功后调用，返回录音文件的临时文件路径，res = {tempFilePath: '录音文件的临时路径'}
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface RecorderManager {
@@ -1675,23 +1675,23 @@ interface RecorderManager {
     /**
      * 录音开始事件
      */
-    onStart(options?: () => void): void;
+    onStart(options?: (result: any) => void): void;
     /**
      * 录音暂停事件
      */
-    onPause(options?: () => void): void;
+    onPause(options?: (result: any) => void): void;
     /**
      * 录音停止事件，会回调文件地址
      */
-    onStop(options?: () => void): void;
+    onStop(options?: (result: any) => void): void;
     /**
      * 已录制完指定帧大小的文件，会回调录音分片结果数据。如果设置了 frameSize ，则会回调此事件
      */
-    onFrameRecorded(options?: () => void): void;
+    onFrameRecorded(options?: (result: any) => void): void;
     /**
      * 录音错误事件, 会回调错误信息
      */
-    onError(options?: () => void): void;
+    onError(options?: (result: any) => void): void;
 }
 
 interface RecorderManagerStartOptions {
@@ -1733,15 +1733,15 @@ interface PlayVoiceOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBackgroundAudioPlayerStateOptions {
@@ -1752,11 +1752,11 @@ interface GetBackgroundAudioPlayerStateOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBackgroundAudioPlayerStateSuccessData {
@@ -1798,15 +1798,15 @@ interface GetBackgroundAudioOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SeekBackgroundAudioOptions {
@@ -1817,15 +1817,15 @@ interface SeekBackgroundAudioOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface BackgroundAudioManager {
@@ -1896,43 +1896,43 @@ interface BackgroundAudioManager {
     /**
      * 背景音频进入可以播放状态，但不保证后面可以流畅播放
      */
-    onCanplay(callback?: () => void): void;
+    onCanplay(callback?: (result: any) => void): void;
     /**
      * 背景音频播放事件
      */
-    onPlay(callback?: () => void): void;
+    onPlay(callback?: (result: any) => void): void;
     /**
      * 背景音频暂停事件
      */
-    onPause(callback?: () => void): void;
+    onPause(callback?: (result: any) => void): void;
     /**
      * 背景音频停止事件
      */
-    onStop(callback?: () => void): void;
+    onStop(callback?: (result: any) => void): void;
     /**
      * 背景音频自然播放结束事件
      */
-    onEnded(callback?: () => void): void;
+    onEnded(callback?: (result: any) => void): void;
     /**
      * 背景音频播放进度更新事件
      */
-    onTimeUpdate(callback?: () => void): void;
+    onTimeUpdate(callback?: (result: any) => void): void;
     /**
      * 用户在系统音乐播放面板点击上一曲事件（iOS only）
      */
-    onPrev(callback?: () => void): void;
+    onPrev(callback?: (result: any) => void): void;
     /**
      * 用户在系统音乐播放面板点击下一曲事件（iOS only）
      */
-    onNext(callback?: () => void): void;
+    onNext(callback?: (result: any) => void): void;
     /**
      * 背景音频播放错误事件
      */
-    onNext(callback?: () => void): void;
+    onNext(callback?: (result: any) => void): void;
     /**
      * 音频加载中事件，当音频因为数据不足，需要停下来加载时会触发
      */
-    onWaiting(callback?: () => void): void;
+    onWaiting(callback?: (result: any) => void): void;
 }
 
 interface CreateAudioContext {
@@ -2018,83 +2018,83 @@ interface CreateInnerAudioContext {
     /**
      * 音频进入可以播放状态，但不保证后面可以流畅播放
      */
-    onCanplay(callback?: () => void): void;
+    onCanplay(callback?: (result: any) => void): void;
     /**
      * 音频播放事件
      */
-    onPlay(callback?: () => void): void;
+    onPlay(callback?: (result: any) => void): void;
     /**
      * 音频暂停事件
      */
-    onPause(callback?: () => void): void;
+    onPause(callback?: (result: any) => void): void;
     /**
      * 音频停止事件
      */
-    onStop(callback?: () => void): void;
+    onStop(callback?: (result: any) => void): void;
     /**
      * 音频自然播放结束事件
      */
-    onEnded(callback?: () => void): void;
+    onEnded(callback?: (result: any) => void): void;
     /**
      * 音频播放进度更新事件
      */
-    onTimeUpdate(callback?: () => void): void;
+    onTimeUpdate(callback?: (result: any) => void): void;
     /**
      * 音频播放错误事件
      */
-    onError(callback?: () => void): void;
+    onError(callback?: (result: any) => void): void;
     /**
      * 音频加载中事件，当音频因为数据不足，需要停下来加载时会触发
      */
-    onWaiting(callback?: () => void): void;
+    onWaiting(callback?: (result: any) => void): void;
     /**
      * 音频进行 seek 操作事件
      */
-    onSeeking(callback?: () => void): void;
+    onSeeking(callback?: (result: any) => void): void;
     /**
      * 音频完成 seek 操作事件
      */
-    onSeeked(callback?: () => void): void;
+    onSeeked(callback?: (result: any) => void): void;
     /**
      * 取消监听 onCanplay 事件
      */
-    offCanplay(callback?: () => void): void;
+    offCanplay(callback?: (result: any) => void): void;
     /**
      * 取消监听 onPlay 事件
      */
-    offPlay(callback?: () => void): void;
+    offPlay(callback?: (result: any) => void): void;
     /**
      * 取消监听 onPause 事件
      */
-    offPause(callback?: () => void): void;
+    offPause(callback?: (result: any) => void): void;
     /**
      * 取消监听 onStop 事件
      */
-    offStop(callback?: () => void): void;
+    offStop(callback?: (result: any) => void): void;
     /**
      * 取消监听 onEnded 事件
      */
-    offEnded(callback?: () => void): void;
+    offEnded(callback?: (result: any) => void): void;
     /**
      * 取消监听 onTimeUpdate 事件
      */
-    offTimeUpdate(callback?: () => void): void;
+    offTimeUpdate(callback?: (result: any) => void): void;
     /**
      * 取消监听 onWaiting 事件
      */
-    offError(callback?: () => void): void;
+    offError(callback?: (result: any) => void): void;
     /**
      * 取消监听 onWaiting 事件
      */
-    offWaiting(callback?: () => void): void;
+    offWaiting(callback?: (result: any) => void): void;
     /**
      * 取消监听 onSeeking 事件
      */
-    offSeeking(callback?: () => void): void;
+    offSeeking(callback?: (result: any) => void): void;
     /**
      * 取消监听 onSeeked 事件
      */
-    offSeeked(callback?: () => void): void;
+    offSeeked(callback?: (result: any) => void): void;
 }
 
 interface ChooseVideoOptions {
@@ -2123,11 +2123,11 @@ interface ChooseVideoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SaveVideoToPhotosAlbumOptions {
@@ -2138,15 +2138,15 @@ interface SaveVideoToPhotosAlbumOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseVideoSuccess {
@@ -2237,11 +2237,11 @@ interface CameraContextTakePhotoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CameraContextTakePhotoResult {
@@ -2259,15 +2259,15 @@ interface CameraContextStartRecordOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CameraContextStopRecordOptions {
@@ -2278,11 +2278,11 @@ interface CameraContextStopRecordOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CameraContextStopRecordResult {
@@ -2323,11 +2323,11 @@ interface SaveFileOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SaveFileSuccess {
@@ -2353,11 +2353,11 @@ interface GetFileInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetFileInfoSuccess {
@@ -2383,11 +2383,11 @@ interface GetSavedFileListOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetSavedFileListSuccess {
@@ -2413,11 +2413,11 @@ interface GetSavedFileInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetSavedFileInfoSuccess {
@@ -2443,15 +2443,15 @@ interface RemoveSavedFileOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OpenDocumentOptions {
@@ -2466,15 +2466,15 @@ interface OpenDocumentOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetStorageOptions {
@@ -2489,15 +2489,15 @@ interface SetStorageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetStorageOptions {
@@ -2512,11 +2512,11 @@ interface GetStorageOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetStorageInfoOptions {
@@ -2527,11 +2527,11 @@ interface GetStorageInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetStorageInfoSuccess {
@@ -2557,15 +2557,15 @@ interface RemoveStorageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetLocationOptions {
@@ -2588,11 +2588,11 @@ interface GetLocationOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetLocationSuccess {
@@ -2642,11 +2642,11 @@ interface ChooseLocationOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseLocationSuccess {
@@ -2692,15 +2692,15 @@ interface OpenLocationOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface MapContext {
@@ -2742,11 +2742,11 @@ interface MapContextGetCenterLocationOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LocationObject {
@@ -2784,11 +2784,11 @@ interface MapContextTranslateMarkerOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 动画结束回调函数
      */
-    animationEnd?: () => void;
+    animationEnd?: (result: any) => void;
 }
 
 interface MapContextIncludePointsOptions {
@@ -2810,11 +2810,11 @@ interface MapContextGetRegionOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface MapContextGetRegionResult {
@@ -2836,11 +2836,11 @@ interface MapContextGetScaleOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface MapContextGetScaleResult {
@@ -2858,11 +2858,11 @@ interface GetSystemInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetSystemInfoResult {
@@ -3055,11 +3055,11 @@ interface GetNetworkTypeOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetNetworkTypeSuccess {
@@ -3106,30 +3106,30 @@ interface StartAccelerometerOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopAccelerometerOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OnCompassChangeSuccess {
@@ -3143,30 +3143,30 @@ interface StartCompassOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopCompassOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface MakePhoneCallOptions {
@@ -3177,15 +3177,15 @@ interface MakePhoneCallOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ScanCodeOptions {
@@ -3204,11 +3204,11 @@ interface ScanCodeOptions {
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ScanCodeSuccessRes {
@@ -3238,15 +3238,15 @@ interface SetClipboardDataOptions {
     /**
      * 成功返回的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetClipboardDataOptions {
@@ -3257,11 +3257,11 @@ interface GetClipboardDataOptions {
     /**
      * 失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetClipboardDataSuccessRes {
@@ -3275,30 +3275,30 @@ interface OpenBluetoothAdapterOptions {
     /**
      * 成功则返回成功初始化信息
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CloseBluetoothAdapterOptions {
     /**
      * 成功则返回成功关闭模块信息
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBluetoothAdapterStateOptions {
@@ -3309,11 +3309,11 @@ interface GetBluetoothAdapterStateOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBluetoothAdapterStateSuccess {
@@ -3365,15 +3365,15 @@ interface StartBluetoothDevicesDiscoveryOptions {
     /**
      * 成功则返回本机蓝牙适配器状态
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopBluetoothDevicesDiscoveryOptions {
@@ -3384,11 +3384,11 @@ interface StopBluetoothDevicesDiscoveryOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopBluetoothDevicesDiscoverySuccess {
@@ -3406,11 +3406,11 @@ interface GetBluetoothDevicesOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBluetoothDevicesSuccess {
@@ -3467,11 +3467,11 @@ interface GetConnectedBluetoothDevicesOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetConnectedBluetoothDevicesSuccess {
@@ -3500,15 +3500,15 @@ interface CloseBLEConnectionOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -3527,15 +3527,15 @@ interface CreateBLEConnectionOptions {
     /**
      * 成功则返回本机蓝牙适配器状态
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OnBLEConnectionStateChangeSuccess {
@@ -3561,11 +3561,11 @@ interface GetBLEDeviceServicesOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBLEDeviceServicesSuccess {
@@ -3606,11 +3606,11 @@ interface GetBLEDeviceCharacteristicsOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBLEDeviceCharacteristicsSuccess {
@@ -3655,11 +3655,11 @@ interface ReadBLECharacteristicValueOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ReadBLECharacteristicValueSuccess {
@@ -3697,11 +3697,11 @@ interface WriteBLECharacteristicValueOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface NotifyBLECharacteristicValueChangeOptions {
@@ -3728,11 +3728,11 @@ interface NotifyBLECharacteristicValueChangeOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OnBLECharacteristicValueChangeSuccess {
@@ -3762,30 +3762,30 @@ interface StartBeaconDiscoveryOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopBeaconDiscoveryOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBeaconsOptions {
@@ -3796,11 +3796,11 @@ interface GetBeaconsOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetBeaconsRes {
@@ -3856,15 +3856,15 @@ interface GetHCEStateOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StartHCEOptions {
@@ -3875,30 +3875,30 @@ interface StartHCEOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopHCEOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface HCEMessageRes {
@@ -3924,45 +3924,45 @@ interface SendHCEMessageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StartWifiOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopWifiOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ConnectWifiOptions {
@@ -3981,30 +3981,30 @@ interface ConnectWifiOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetWifiListOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface WiFi {
@@ -4034,15 +4034,15 @@ interface SetWifiListOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface WiFiItem {
@@ -4068,11 +4068,11 @@ interface GetConnectedWifiOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetConnectedWifiRes {
@@ -4109,15 +4109,15 @@ interface ShowToastOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowLoadingOptions {
@@ -4132,15 +4132,15 @@ interface ShowLoadingOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowModalOptions {
@@ -4179,11 +4179,11 @@ interface ShowModalOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowModalRes {
@@ -4213,11 +4213,11 @@ interface ShowActionSheetOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowActionSheetRes {
@@ -4235,15 +4235,15 @@ interface SetNavigationBarTitleOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetNavigationbarColorOptions {
@@ -4262,15 +4262,15 @@ interface SetNavigationbarColorOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetTabBarBadgeOptions {
@@ -4285,15 +4285,15 @@ interface SetTabBarBadgeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface RemoveTabBarBadgeOptions {
@@ -4304,15 +4304,15 @@ interface RemoveTabBarBadgeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowTabBarRedDotOptions {
@@ -4323,15 +4323,15 @@ interface ShowTabBarRedDotOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface HideTabBarRedDotOptions {
@@ -4342,15 +4342,15 @@ interface HideTabBarRedDotOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface NavigationBarAnimation {
@@ -4391,15 +4391,15 @@ interface SetTabBarBadgeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface RemoveTabBarBadgeOptions {
@@ -4410,15 +4410,15 @@ interface RemoveTabBarBadgeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowTabBarRedDotOptions {
@@ -4429,15 +4429,15 @@ interface ShowTabBarRedDotOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface HideTabBarRedDotOptions {
@@ -4448,15 +4448,15 @@ interface HideTabBarRedDotOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetTabBarStyleOptions {
@@ -4479,15 +4479,15 @@ interface SetTabBarStyleOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetTabBarItemOptions {
@@ -4510,15 +4510,15 @@ interface SetTabBarItemOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowTabBarOptions {
@@ -4529,15 +4529,15 @@ interface ShowTabBarOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface HideTabBarOptions {
@@ -4548,15 +4548,15 @@ interface HideTabBarOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetTopBarTextOptions {
@@ -4567,15 +4567,15 @@ interface SetTopBarTextOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface NavigateToOptions {
@@ -4604,15 +4604,15 @@ interface NavigateToOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface RedirectToOptions {
@@ -4623,15 +4623,15 @@ interface RedirectToOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ReLaunchOptions {
@@ -4642,15 +4642,15 @@ interface ReLaunchOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SwitchTabOptions {
@@ -4661,15 +4661,15 @@ interface SwitchTabOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CreateIntersectionObserverOptions {
@@ -4753,15 +4753,15 @@ interface StartPullDownRefreshOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SelectorQuery {
@@ -4784,7 +4784,7 @@ interface SelectorQuery {
     /**
      * 执行所有的请求
      */
-    exec(callback?: () => void): NodesRef;
+    exec(callback?: (result: any) => void): NodesRef;
 }
 
 interface NodesRef {
@@ -4912,15 +4912,15 @@ interface EditorContextInsertImageOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextInsertTextOptions {
@@ -4931,15 +4931,15 @@ interface EditorContextInsertTextOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextSetContentsOptions {
@@ -4954,90 +4954,90 @@ interface EditorContextSetContentsOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextGetContentsOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextClearOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextRemoveFormatOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextUndoOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface EditorContextRedoOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface NodeField {
@@ -5461,7 +5461,7 @@ interface CanvasContext {
     /**
      * 将之前在绘图上下文中的描述（路径、变形、样式）画到 canvas 中
      */
-    draw(reserve?: boolean, callback?: () => void): void;
+    draw(reserve?: boolean, callback?: (result: any) => void): void;
     /**
      * 测量文本尺寸信息，目前仅返回文本宽度
      */
@@ -5535,11 +5535,11 @@ interface CanvasToTempFilePathOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CanvasToTempFilePathRes {
@@ -5577,11 +5577,11 @@ interface CanvasGetImageDataOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CanvasGetImageDataRes {
@@ -5631,15 +5631,15 @@ interface CanvasPutImageDataOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetScreenBrightnessOptions {
@@ -5650,15 +5650,15 @@ interface SetScreenBrightnessOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetScreenBrightnessOptions {
@@ -5669,11 +5669,11 @@ interface GetScreenBrightnessOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetScreenBrightnessSuccessRes {
@@ -5691,45 +5691,45 @@ interface SetKeepScreenOnOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface VibrateLongOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface VibrateShortOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface AddPhoneContactOptions {
@@ -5864,15 +5864,15 @@ interface AddPhoneContactOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetExtConfigOptions {
@@ -5883,11 +5883,11 @@ interface GetExtConfigOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetExtConfigRes {
@@ -5951,11 +5951,11 @@ interface GetProviderOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetProviderRes {
@@ -5980,8 +5980,9 @@ interface LoginOptions {
      * - qq: QQ登录
      * - sinaweibo: 新浪微博登录
      * - xiaomi: 小米登录
+     * - apple: Apple登录
      */
-    provider?: 'weixin' | 'qq' | 'sinaweibo' | 'xiaomi';
+    provider?: 'weixin' | 'qq' | 'sinaweibo' | 'xiaomi' | 'apple';
     /**
      * 超时时间，单位 ms
      */
@@ -5993,11 +5994,11 @@ interface LoginOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LoginRes {
@@ -6035,15 +6036,15 @@ interface CheckSessionOptions {
     /**
      * 接口调用成功的回调函数，session_key未过期
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数，session_key已过期
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface AuthorizeOptions {
@@ -6054,15 +6055,15 @@ interface AuthorizeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetUserInfoOptions {
@@ -6093,11 +6094,11 @@ interface GetUserInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetUserInfoRes {
@@ -6159,7 +6160,7 @@ interface ShareOptions {
      * - 4: 视频
      * - 5: 小程序
      */
-    type?: '0' | '1' | '2' | '3' | '4' | '5';
+    type?: 0 | 1 | 2 | 3 | 4 | 5;
     /**
      * 标题
      */
@@ -6191,15 +6192,15 @@ interface ShareOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface MiniProgramShareOptions {
@@ -6217,7 +6218,7 @@ interface MiniProgramShareOptions {
      * - 1: 测试版
      * - 2: 体验版
      */
-    type?: '0' | '1' | '2';
+    type?: 0 | 1 | 2;
     /**
      * 兼容低版本的网页链接
      */
@@ -6235,15 +6236,15 @@ interface SubscribePushOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface UnscribePushOptions {
@@ -6257,15 +6258,15 @@ interface UnscribePushOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OnPushOptions {
@@ -6279,19 +6280,19 @@ interface OnPushOptions {
     /**
      * 接收到透传数据回调，回调参数（Object）：messageId（消息id）、data（消息内容）
      */
-    callback?: () => void;
+    callback?: (result: any) => void;
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OffPushOptions {
@@ -6305,15 +6306,15 @@ interface OffPushOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ShowShareMenuOptions {
@@ -6324,30 +6325,30 @@ interface ShowShareMenuOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface HideShareMenuOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface UpdateShareMenuOptions {
@@ -6358,15 +6359,15 @@ interface UpdateShareMenuOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetShareInfoOptions {
@@ -6385,11 +6386,11 @@ interface GetShareInfoOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetShareInfoRes {
@@ -6415,11 +6416,11 @@ interface ChooseAddressOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseAddressRes {
@@ -6473,11 +6474,11 @@ interface AddCardOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface AddCardData {
@@ -6525,15 +6526,15 @@ interface OpenCardOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OpenCardData {
@@ -6551,22 +6552,22 @@ interface OpenSettingOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetSettingOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
@@ -6574,7 +6575,7 @@ interface GetSettingOptions {
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface AuthSetting {
@@ -6628,11 +6629,11 @@ interface GetWeRunDataOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface GetWeRunDataRes {
@@ -6670,15 +6671,15 @@ interface NavigateToMiniProgramOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface NavigateBackMiniProgramOptions {
@@ -6689,15 +6690,15 @@ interface NavigateBackMiniProgramOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseInvoiceTitleOptions {
@@ -6708,11 +6709,11 @@ interface ChooseInvoiceTitleOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface ChooseInvoiceTitleRes {
@@ -6758,11 +6759,11 @@ interface CheckIsSupportSoterAuthenticationOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface CheckIsSupportSoterAuthenticationRes {
@@ -6796,11 +6797,11 @@ interface StartSoterAuthenticationOptions {
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StartSoterAuthenticationRes {
@@ -6833,30 +6834,30 @@ interface CheckIsSoterEnrolledInDeviceOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface UpdateManager {
     /**
      * 当向应用后台请求完新版本信息，会进行回调
      */
-    onCheckForUpdate(callback?: () => void): void;
+    onCheckForUpdate(callback?: (result: any) => void): void;
     /**
      * 当新版本下载完成，会进行回调
      */
-    onUpdateReady(callback?: () => void): void;
+    onUpdateReady(callback?: (result: any) => void): void;
     /**
      * 当新版本下载失败，会进行回调
      */
-    onUpdateFailed(callback?: () => void): void;
+    onUpdateFailed(callback?: (result: any) => void): void;
     /**
      * 当新版本下载完成，调用该方法会强制当前uni-app应用上新版本并重启
      */
@@ -6871,7 +6872,7 @@ interface Worker {
     /**
      * 监听 Worker 线程向当前线程发送的消息
      */
-    onMessage(callback?: () => void): void;
+    onMessage(callback?: (result: any) => void): void;
     /**
      * 结束当前 Worker 线程，仅限在主线程 Worker 实例上调用。
      */
@@ -6886,15 +6887,15 @@ interface SetEnableDebugOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetBackgroundColorOptions {
@@ -6913,15 +6914,15 @@ interface SetBackgroundColorOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface SetBackgroundTextStyleOptions {
@@ -6932,15 +6933,15 @@ interface SetBackgroundTextStyleOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface OnGyroscopeChangeSuccess {
@@ -6966,45 +6967,45 @@ interface StartGyroscopeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopGyroscopeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface StopGyroscopeOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LoadFontFaceOptions {
@@ -7023,15 +7024,15 @@ interface LoadFontFaceOptions {
     /**
      * 接口调用成功的回调函数
      */
-    success?: () => void;
+    success?: (result: any) => void;
     /**
      * 接口调用失败的回调函数
      */
-    fail?: () => void;
+    fail?: (result: any) => void;
     /**
      * 接口调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: () => void;
+    complete?: (result: any) => void;
 }
 
 interface LoadFontFaceOptionsDesc {
