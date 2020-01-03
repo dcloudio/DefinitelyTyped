@@ -909,6 +909,12 @@ declare class Uni {
      */
     getExtConfigSync(): GetExtConfigSyncRes;
     /**
+     * 显示分享按钮
+     *
+     * 参考: [http://uniapp.dcloud.io/api/plugins/share?id=showsharemenu](http://uniapp.dcloud.io/api/plugins/share?id=showsharemenu)
+     */
+    showShareMenu(options?: ShowShareMenuOptions): void;
+    /**
      * 隐藏分享按钮
      *
      * 参考: [http://uniapp.dcloud.io/api/plugins/share?id=hidesharemenu](http://uniapp.dcloud.io/api/plugins/share?id=hidesharemenu)
