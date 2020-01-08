@@ -243,6 +243,12 @@ declare class Uni {
      */
     setStorageSync(key?: string, value?: any): void;
     /**
+     * 自定义统计上报数据
+     *
+     * 参考: [http://uniapp.dcloud.io/api/other/report?id=统计](http://uniapp.dcloud.io/api/other/report?id=统计)
+     */
+    report(eventName?: string, options?: any): void;
+    /**
      * 从本地缓存中异步获取指定 key 对应的内容
      *
      * 参考: [http://uniapp.dcloud.io/api/storage/storage?id=getstorage](http://uniapp.dcloud.io/api/storage/storage?id=getstorage)
